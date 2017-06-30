@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Recipe</h1>
+    <p><%= @recipe.name %></p>
+    <p><%= @recipe.ingredients %></p>
+    <p><%= @recipe.cook_time %></p>
+    <h1>Update that shitty ass recipe</h1>
+    <form action= <%="/recipes/#{@recipe.id}"%> method="post">
+      <input type="text" name="name" id="name">
+      <input type="text" name="ingredients" id="ingredients">
+      <input type="text" name="cook_time" id="cook_time">
+      <input type="submit" name="submit" id="submit">
+    </form>
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+  </body>
+</html>
